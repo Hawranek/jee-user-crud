@@ -5,7 +5,7 @@ import pl.coderslab.utils.DbUtil;
 import java.sql.*;
 import java.util.Arrays;
 
-public class UserDAO {
+public class UserDao {
     private static final String CREATE_USER =
             "INSERT INTO users(username, email, password) VALUES (?, ?, ?)";
     private static final String GET_USER_BY_ID = "SELECT * FROM users WHERE id=?";
