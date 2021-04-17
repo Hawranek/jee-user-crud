@@ -16,5 +16,4 @@ public class UserList extends HttpServlet {
         getServletContext().getRequestDispatcher("/users/list.jsp")
                 .forward(request, response);
     }
-
 }

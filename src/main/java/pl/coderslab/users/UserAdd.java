@@ -2,6 +2,7 @@ package pl.coderslab.users;
 
 import pl.coderslab.entity.User;
 import pl.coderslab.entity.UserDao;
+import pl.coderslab.utils.Validator;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -21,10 +22,11 @@ public class UserAdd extends HttpServlet {
         String userName = request.getParameter("userName");
         String userEmail = request.getParameter("userEmail");
         String userPassword = request.getParameter("userPassword");
+        Validator validator=new Validator();
 
         if (userName.isEmpty() || userEmail.isEmpty() || userPassword.isEmpty()) {
-            setNotEmptyParameters(request, userName, userEmail, userPassword);
-            setWarningMessage(request,"Wszystkie pola muszą być wypełnione.");
+            validator.setNotEmptyParameters(request, userName, userEmail, userPassword);
+            validator.setWarningMessage(request,"Wszystkie pola muszą być wypełnione.");
             getServletContext().getRequestDispatcher("/users/add.jsp").forward(request, response);
         } else {
             User newUser = new User();
@@ -36,19 +38,5 @@ public class UserAdd extends HttpServlet {
         }
     }
 
-    private void setWarningMessage(HttpServletRequest request, String message) {
-        request.setAttribute("message", message);
-    }
 
-    private void setNotEmptyParameters(HttpServletRequest request, String userName, String userEmail, String userPassword) {
-        if (!userName.isEmpty()) {
-            request.setAttribute("userName", userName);
-        }
-        if (!userEmail.isEmpty()) {
-            request.setAttribute("userEmail", userEmail);
-        }
-        if (!userPassword.isEmpty()) {
-            request.setAttribute("userPassword", userPassword);
-        }
-    }
 }
