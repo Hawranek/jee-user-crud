@@ -9,8 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af00b04a-6592-4894-823e-adae57a1bc21" name="Default Changelist" comment="walidacja danych UserAdd, UserEdit (czy istnieją)">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/users/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/users/add.jsp" afterDir="false" />
+    <list default="true" id="af00b04a-6592-4894-823e-adae57a1bc21" name="Default Changelist" comment="poprawione wprowadzanie haseł (zamiana na * wpisywanego tekstu)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/filters/EncodingFIlter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/filters/EncodingFIlter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/users/del.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/users/del.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +188,7 @@
       <workItem from="1618647866813" duration="519000" />
       <workItem from="1618648529387" duration="698000" />
       <workItem from="1618649297440" duration="1689000" />
-      <workItem from="1618651592337" duration="15404000" />
+      <workItem from="1618651592337" duration="17003000" />
     </task>
     <task id="LOCAL-00001" summary="Initial files commit">
       <created>1618649866964</created>
@@ -258,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618667579017</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="poprawione wprowadzanie haseł (zamiana na * wpisywanego tekstu)">
+      <created>1618667870430</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1618667870430</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,6 +296,7 @@
     <MESSAGE value="drobne poprawki" />
     <MESSAGE value="walidacja danych UserAdd (czy istnieją)" />
     <MESSAGE value="walidacja danych UserAdd, UserEdit (czy istnieją)" />
-    <option name="LAST_COMMIT_MESSAGE" value="walidacja danych UserAdd, UserEdit (czy istnieją)" />
+    <MESSAGE value="poprawione wprowadzanie haseł (zamiana na * wpisywanego tekstu)" />
+    <option name="LAST_COMMIT_MESSAGE" value="poprawione wprowadzanie haseł (zamiana na * wpisywanego tekstu)" />
   </component>
 </project>

@@ -42,6 +42,7 @@
                             <td>${user.email}</td>
                         </tr>
                     </table>
+
                     <button type="submit" class="btn btn-danger">Usuń</button>
                 </form>
             </div>
