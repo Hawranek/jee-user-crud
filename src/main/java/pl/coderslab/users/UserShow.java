@@ -11,14 +11,9 @@ import java.io.IOException;
 public class UserShow extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id=request.getParameter("id");
-        UserDao userDao=new UserDao();
-        request.setAttribute("user",userDao.read(Integer.parseInt(id)));
-        getServletContext().getRequestDispatcher("/users/show.jsp").forward(request,response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String id = request.getParameter("id");
+        UserDao userDao = new UserDao();
+        request.setAttribute("user", userDao.read(Integer.parseInt(id)));
+        getServletContext().getRequestDispatcher("/users/show.jsp").forward(request, response);
     }
 }
