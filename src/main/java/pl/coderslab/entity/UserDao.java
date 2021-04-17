@@ -1,5 +1,8 @@
 package pl.coderslab.entity;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import pl.coderslab.users.UserDel;
 import pl.coderslab.utils.DbUtil;
 
 import java.sql.*;
@@ -15,6 +18,9 @@ public class UserDao {
     public static final String DELETE = "DELETE\n" +
             "FROM users\n" +
             "WHERE id = ?;";
+
+    private static final Logger log = LogManager.getLogger(UserDao.class);
+
 
 
     public User create(User user) {
@@ -32,7 +38,7 @@ public class UserDao {
             if (rs.next()) {
                 user.setId(rs.getInt(1));
             }
-
+            log.info("DODANO użytkownika o ID: "+user.getId());
             return user;
         } catch (SQLIntegrityConstraintViolationException e1) {
             System.out.println("Podany użytkownik istnieje już w bazie danych.");
@@ -56,6 +62,8 @@ public class UserDao {
                 user.setUserName(resultSet.getString("username"));
                 user.setEmail(resultSet.getString("email"));
                 user.setPassword(resultSet.getString("password"));
+                log.info("WCZYTANO użytkownika o ID: "+user.getId());
+
                 return user;
             }
 
@@ -103,6 +111,8 @@ public class UserDao {
             statement.setString(2, user.getEmail());
             statement.setString(3, hashPassword(user.getPassword()));
             statement.setInt(4, user.getId());
+            log.info("EDYCJA użytkownika o ID: "+user.getId());
+
             statement.executeUpdate();
         } catch (SQLIntegrityConstraintViolationException e1) {
             System.out.println("Podany użytkownik już istnieje w bazie.");
@@ -115,6 +125,8 @@ public class UserDao {
         try (Connection conn = DbUtil.getConnection();
              PreparedStatement statement = conn.prepareStatement(DELETE)) {
             statement.setInt(1, id);
+            log.info("USUNIĘTO użytkownika o ID: "+id);
+
             statement.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();

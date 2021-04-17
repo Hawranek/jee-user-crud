@@ -1,5 +1,7 @@
 package pl.coderslab.users;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import pl.coderslab.entity.UserDao;
 
 import javax.servlet.*;
@@ -9,6 +11,9 @@ import java.io.IOException;
 
 @WebServlet("/user/delete")
 public class UserDel extends HttpServlet {
+
+
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");

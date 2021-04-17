@@ -1,5 +1,7 @@
 package pl.coderslab.users;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import pl.coderslab.entity.User;
 import pl.coderslab.entity.UserDao;
 import pl.coderslab.utils.Validator;
@@ -11,6 +13,9 @@ import java.io.IOException;
 
 @WebServlet("/user/add")
 public class UserAdd extends HttpServlet {
+
+
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         getServletContext().getRequestDispatcher("/users/add.jsp").forward(request, response);

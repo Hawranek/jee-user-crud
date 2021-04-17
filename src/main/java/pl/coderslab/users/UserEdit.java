@@ -1,5 +1,7 @@
 package pl.coderslab.users;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import pl.coderslab.entity.User;
 import pl.coderslab.entity.UserDao;
 import pl.coderslab.utils.Validator;
@@ -11,6 +13,9 @@ import java.io.IOException;
 
 @WebServlet("/user/edit")
 public class UserEdit extends HttpServlet {
+
+
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
@@ -36,9 +41,11 @@ public class UserEdit extends HttpServlet {
         if (userName.isEmpty() || userEmail.isEmpty() || userPassword.isEmpty()) {
             validator.setWarningMessage(request, "Wszystkie pola muszą być wypełnione.");
             request.setAttribute("user", newUser);
+
             getServletContext().getRequestDispatcher("/users/edit.jsp").forward(request, response);
 
         } else {
+
             userDao.update(newUser);
             response.sendRedirect(request.getContextPath() + "/user/list");
 
