@@ -40,7 +40,7 @@
         </div>
         <div class="form-group">
           <label for="userName">Hasło</label>
-          <input type="text" name="userPassword" class="form-control"
+          <input type="password" name="userPassword" class="form-control"
                  placeholder="Nowe hasło użytkownika" id="userPassword">
         </div>
         <button type="submit" class="btn btn-success">Zapisz</button>

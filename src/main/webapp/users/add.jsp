@@ -42,7 +42,7 @@
                 </div>
                 <div class="form-group">
                     <label for="userName">Hasło</label>
-                    <input type="text" name="userPassword" class="form-control"
+                    <input type="password" name="userPassword" class="form-control"
                            placeholder="Hasło użytkownika" id="userPassword"
                            value="${empty userPassword ? null : userPassword}">
                 </div>
